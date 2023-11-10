@@ -24,7 +24,7 @@ body {
   height: 100%;
   width: 100%;
   z-index: -1;
-  background-image: url(../assets/picture/sadser-bg4.jpg);
+  background-image: url(../assets/picture/background/sadser-bg.jpg);
   background-position: center;
 }
 
@@ -60,13 +60,17 @@ body {
 }
 
 .mynavbar {
-  background-color: rgba(206, 206, 206, 0.658) !important;
-  /* backdrop-filter: blur(4px); */
+  background-color: rgba(225, 225, 225, 0.4) !important;
+  backdrop-filter: blur(6px);
 }
 
-/* .mynavbar .offcanvas {
+.mynavbar .offcanvas {
   height: 100vh;
-} */
+}
+
+.sticky-top {
+  overflow: hidden;
+}
 
 .mynavbar .navbar-brand,
 .mynavbar .offcanvas-title {
@@ -81,7 +85,7 @@ body {
 }
 
 .home {
-  background-image: url(../assets/picture/home-bg1.png);
+  background-image: url(../assets/picture/background/home-bg1.png);
   min-height: 100vh;
   margin-top: -6.4rem;
   padding-top: 12rem;
@@ -89,7 +93,8 @@ body {
 }
 
 .home h2,
-.info h2 {
+.info h2,
+.story h2 {
   color: var(--pink);
   font-family: "Sacramento", cursive;
   font-size: 5rem;
@@ -183,6 +188,134 @@ body {
   font-weight: 300;
 }
 
+.story {
+  padding-top: 10rem;
+  padding-bottom: 8rem;
+  background-color: #e7dfc8;
+  /* background-image: url(../assets/picture/background/home-bg1.png); */
+}
+
+.story span {
+  text-transform: uppercase;
+  color: #666;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.story p {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.timeline {
+  list-style: none;
+  pad: 1.4rem 0;
+  margin-top: 1rem;
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  width: 3px;
+  background-color: #616159;
+  left: 51.2%;
+}
+
+.timeline li {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.timeline li::before,
+.timeline li::after {
+  content: "";
+  display: table;
+}
+
+.timeline li::after {
+  clear: both;
+}
+
+.timeline li .timeline-image {
+  width: 160px;
+  height: 160px;
+  background-color: #ccc;
+  position: absolute;
+  left: 50%;
+  border-radius: 50%;
+  transform: translateX(-50%) translateY(20%);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.timeline li .timeline-panel {
+  width: 40%;
+  float: left;
+  border: 1px solid #ccc;
+  background-color: white;
+  padding: 1.4rem;
+  position: relative;
+  margin-left: -1rem;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.timeline li .timeline-panel::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-top: 15px solid transparent;
+  border-left: 15px solid #ccc;
+  border-right: 0 solid #ccc;
+  border-bottom: 15px solid transparent;
+  top: 100px;
+  right: -30px;
+  /* background-color: white;
+  border: 1px solid #ccc;
+  right: -10px;
+  top: 70px;
+  transform: rotate(45deg);
+  z-index: -1; */
+}
+
+.timeline li .timeline-panel::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-top: 14px solid transparent;
+  border-left: 14px solid white;
+  border-right: 0 solid white;
+  border-bottom: 14px solid transparent;
+  top: 101px;
+  right: -29px;
+}
+
+.timeline li.timeline-inverted .timeline-panel {
+  float: right;
+  margin-right: -1rem;
+}
+
+.timeline li.timeline-inverted .timeline-panel::before {
+  border-left: 0 solid #ccc;
+  border-right: 15px solid #ccc;
+  left: -30px;
+  right: auto;
+}
+.timeline li.timeline-inverted .timeline-panel::after {
+  border-left: 0 solid white;
+  border-right: 14px solid white;
+  left: -29px;
+  right: auto;
+}
+
 /* Media Query */
 /* extra large screen */
 @media (max-width: 1200px) {
@@ -200,6 +333,27 @@ body {
   }
   .home .ring {
     display: none;
+  }
+  .timeline::before {
+    left: 60px;
+  }
+  .timeline li {
+    padding: 3rem 0;
+    margin-bottom: 0;
+  }
+  .timeline li .timeline-image {
+    left: 12.5px;
+    margin-left: 25px;
+    top: 0px;
+  }
+  .timeline li .timeline-panel {
+    width: calc(100% - 200px);
+    float: right;
+    margin-left: 0;
+  }
+  .timeline li.timeline-inverted .timeline-panel {
+    float: right;
+    margin-right: 0;
   }
 }
 
@@ -226,12 +380,14 @@ body {
     padding: 30px;
   }
   .hero::before {
-    background-image: url(../assets/picture/sadser-bg4-phone.jpg);
-    background-size: cover;
+    background-image: url(../assets/picture/background/sadser-bg-phone.jpg);
   }
   .mynavbar .nav-link {
     text-align: end;
     padding-right: 5rem;
+  }
+  .info {
+    min-height: 100vh;
   }
 }
 
