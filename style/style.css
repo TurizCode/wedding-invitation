@@ -9,9 +9,13 @@
 body {
   font-size: 1.2rem;
   font-family: "Work Sans", sans-serif;
-  min-height: 2000px;
+  min-height: 4000px;
 }
 
+.hero {
+  position: relative;
+  min-height: 100vh;
+}
 .hero::before {
   content: "";
   position: absolute;
@@ -24,11 +28,6 @@ body {
   background-position: center;
 }
 
-.hero {
-  position: relative;
-  min-height: 100vh;
-}
-
 .hero h1,
 .hero h4,
 .hero p {
@@ -37,16 +36,16 @@ body {
 
 .hero h1 {
   font-family: "Sacramento", cursive;
-  font-size: 6rem;
+  font-size: 6.2rem;
   margin-top: 8px;
 }
 
 .hero p {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 }
 
 .hero h4 {
-  font-size: 1.6rem;
+  font-size: 1.7rem;
 }
 
 .hero a {
@@ -60,7 +59,137 @@ body {
   background-color: var(--pink);
 }
 
+.mynavbar {
+  background-color: rgba(206, 206, 206, 0.658) !important;
+  /* backdrop-filter: blur(4px); */
+}
+
+/* .mynavbar .offcanvas {
+  height: 100vh;
+} */
+
+.mynavbar .navbar-brand,
+.mynavbar .offcanvas-title {
+  font-family: "Sacramento", cursive;
+  font-size: 3.2rem;
+  font-weight: 600;
+}
+
+.mynavbar .nav-link {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.home {
+  background-image: url(../assets/picture/home-bg1.png);
+  min-height: 100vh;
+  margin-top: -6.4rem;
+  padding-top: 12rem;
+  padding-bottom: 5rem;
+}
+
+.home h2,
+.info h2 {
+  color: var(--pink);
+  font-family: "Sacramento", cursive;
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+.home h3 {
+  color: #444;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.home p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.home .couple {
+  margin-top: 100px;
+}
+
+.home .couple h3 {
+  font-family: "Sacramento", cursive;
+  font-size: 2.4rem;
+  color: var(--pink);
+  font-weight: bold;
+}
+
+.home .couple img {
+  width: 100%;
+}
+
+.home .ring {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  display: flex;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(60px);
+}
+
+.home .ring i {
+  display: flex;
+  justify-content: center;
+}
+
+.home .ring img {
+  width: 90%;
+  align-self: center;
+}
+
+.info {
+  background-color: var(--bg);
+  color: white;
+  padding-top: 10rem;
+  padding-bottom: 8rem;
+}
+
+.info .alamat {
+  font-size: 1.1rem;
+}
+
+.info .description {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.info .card {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+  border: 1px solid #999;
+}
+
+.info .card-header {
+  border-bottom: 1px solid #999;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.info .card-body {
+  font-size: 1rem;
+}
+
+.info .card-footer {
+  border-top: 1px solid #999;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
 /* Media Query */
+/* extra large screen */
+@media (max-width: 1200px) {
+  .home .ring {
+    transform: translateX(-50%) translateY(42px);
+  }
+}
 /* laptop */
 @media (max-width: 992px) {
   html {
@@ -69,15 +198,22 @@ body {
   .simply-countdown > .simply-section {
     padding: 38px;
   }
+  .home .ring {
+    display: none;
+  }
 }
 
 /* tablet */
 @media (max-width: 768px) {
   html {
-    font-size: 62.5%;
+    font-size: 65%;
   }
   .simply-countdown > .simply-section {
     padding: 34px;
+  }
+  .mynavbar .nav-link {
+    font-size: 2rem;
+    text-align: center;
   }
 }
 
@@ -88,5 +224,20 @@ body {
   }
   .simply-countdown > .simply-section {
     padding: 30px;
+  }
+  .hero::before {
+    background-image: url(../assets/picture/sadser-bg4-phone.jpg);
+    background-size: cover;
+  }
+  .mynavbar .nav-link {
+    text-align: end;
+    padding-right: 5rem;
+  }
+}
+
+/* small mobile phone */
+@media (max-width: 368px) {
+  html {
+    font-size: 48%;
   }
 }
