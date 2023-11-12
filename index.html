@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="./assets/picture/icon/ring-icon.png" />
-    <title>Sadam and Sherina's Wedding</title>
+    <title>Sadam & Sherina's Wedding</title>
 
     <!-- Importing Bootstrap -->
     <link
@@ -34,7 +34,7 @@
       class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white"
     >
       <main>
-        <h4>Kepada Bapak/Ibu/Saudara/i,</h4>
+        <h4>Kepada <span>Bapak/Ibu/Saudara/i </span></h4>
         <h1>Sadam & Sherina</h1>
         <p>Akan melangsungkan resepsi pernikahan dalam:</p>
         <div class="simply-countdown"></div>
@@ -179,6 +179,15 @@
               No.45, Kec. Lembang, Kab. Bandung Barat.
             </p>
             <!-- Pinned Map Location -->
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15846.194093480652!2d107.6171106!3d-6.8246311!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e11292b0db83%3A0xc0f73eee035e3ffd!2sBosscha!5e0!3m2!1sid!2sid!4v1699754735776!5m2!1sid!2sid"
+              width="100%"
+              height="300"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
             <a
               href="https://maps.app.goo.gl/hftqnj6F2ciePQuJ9"
               target="_blank"
@@ -648,6 +657,37 @@
           <button class="btn btn-primary">Kirim</button>
         </div>
       </form>
+
+      <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+          <div id="disqus_thread"></div>
+          <script>
+            /**
+             *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+             *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+            /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+            (function () {
+              // DON'T EDIT BELOW THIS LINE
+              var d = document,
+                s = d.createElement("script");
+              s.src = "https://sadam-sherinas-wedding.disqus.com/embed.js";
+              s.setAttribute("data-timestamp", +new Date());
+              (d.head || d.body).appendChild(s);
+            })();
+          </script>
+          <noscript
+            >Please enable JavaScript to view the
+            <a href="https://disqus.com/?ref_noscript"
+              >comments powered by Disqus.</a
+            ></noscript
+          >
+        </div>
+      </div>
     </section>
 
     <!-- GIFT PAGE -->
@@ -748,6 +788,16 @@
         </div>
       </div>
     </footer>
+
+    <div id="audio-container">
+      <audio id="song" autoplay loop>
+        <source src="./assets/audio/Mengenang Bintang.mp3" type="audio/mp3" />
+      </audio>
+
+      <div class="audio-icon-wrapper" style="display: none">
+        <i class="bi bi-pause"></i>
+      </div>
+    </div>
 
     <!-- IMPORTED SCRIPT: Bootstrap -->
     <script
